@@ -118,6 +118,13 @@ public class BasicController {
         return "basic/block";
     }
 
+    @GetMapping("/javascript")
+    public String javascript(Model model) {
+        model.addAttribute("user", new User("userA", 10));
+        addUsers(model);
+        return "basic/javascript"; // 해당 api 페이지는 빈 페이지가 나오는게 정상. 페이지 소스보기에서 값이 어떻게 들어가는지 체크하기 위함
+    }
+
     @Component("helloBean")
     static class HelloBean {
         public String hello(String data) {
