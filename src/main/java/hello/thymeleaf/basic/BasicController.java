@@ -79,6 +79,12 @@ public class BasicController {
         model.addAttribute("data", "Spring!");
         return "basic/operation";
     }
+
+    @GetMapping("/attribute")
+    public String attribute(){
+        return "basic/attribute";
+    }
+
     @Component("helloBean")
     static class HelloBean {
         public String hello(String data) {
